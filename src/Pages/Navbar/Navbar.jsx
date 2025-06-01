@@ -3,6 +3,7 @@ import { CiMenuFries } from 'react-icons/ci';
 import { FaBars } from 'react-icons/fa';
 import { RxCross2 } from 'react-icons/rx';
 import { NavLink } from 'react-router-dom';
+import './Navbar.css'
 
 const Navbar = () => {
 
@@ -15,11 +16,11 @@ const Navbar = () => {
                 <span className='text-3xl font-bold'>ASHIK</span>
                 <div className='hidden md:block'>
                     <ul className='flex gap-5  font-semibold'>
-                        <NavLink to={'/'}><li>Home</li></NavLink>
-                        <NavLink to={'/about'}><li>About</li></NavLink>
-                        <NavLink to={'/project'}><li>Project</li></NavLink>
-                        <NavLink><li>Blog</li></NavLink>
-                        <NavLink><li>Contact</li></NavLink>
+                        <NavLink to={'/'} className={'nav-link'}><li>Home</li></NavLink>
+                        <NavLink to={'/about'} className={'nav-link'}><li>About</li></NavLink>
+                        <NavLink to={'/project'} className={'nav-link'}><li>Project</li></NavLink>
+                        <NavLink to={'/blog'} className={'nav-link'}><li>Blog</li></NavLink>
+                        <NavLink to={'/contact'} className={'nav-link'}><li>Contact</li></NavLink>
                     </ul>
                 </div>
                 <div >
@@ -36,8 +37,8 @@ const Navbar = () => {
                                     <NavLink to={'/'} className={'hover:bg-white duration-500 p-2 rounded-sm w-auto'}><li>Home</li></NavLink>
                                     <NavLink to={'/about'} className={'hover:bg-white duration-500 p-2 rounded-sm w-auto'}><li>About</li></NavLink>
                                     <NavLink to={'/project'}><li className={'hover:bg-white duration-500 p-2 rounded-sm w-auto'}>Project</li></NavLink>
-                                    <NavLink><li className={'hover:bg-white duration-500 p-2 rounded-sm w-auto'}>Blog</li></NavLink>
-                                    <NavLink><li className={'hover:bg-white duration-500 p-2 rounded-sm w-auto'}>Contact</li></NavLink>
+                                    <NavLink to={'/blog'}><li className={'hover:bg-white duration-500 p-2 rounded-sm w-auto'}>Blog</li></NavLink>
+                                    <NavLink to={'/contact'}><li className={'hover:bg-white duration-500 p-2 rounded-sm w-auto'}>Contact</li></NavLink>
                                 </ul>
                             </div>
                     </span>

@@ -20,7 +20,7 @@ const AboutSection = () => {
     ];
 
     return (
-        <div>
+        <div className="pb-10">
             {
                 location.pathname === '/about' ? 
                 <Title Subtitle='Get to know me' title='About Me'></Title> :

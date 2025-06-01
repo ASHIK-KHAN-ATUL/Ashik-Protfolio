@@ -4,6 +4,8 @@ import HomeLayouts from '../HomeLayouts/HomeLayouts';
 import Home from '../Pages/Home/Home';
 import AboutSection from '../Pages/Component/AboutSection/AboutSection';
 import Project from '../Pages/Component/Project/Project';
+import Blog from '../Pages/Component/Blog/Blog';
+import Contact from '../Pages/Component/Contact/Contact';
 
 export const Router = createBrowserRouter([
   {
@@ -21,6 +23,14 @@ export const Router = createBrowserRouter([
         {
           path: '/project',
           element: <Project></Project>
+        },
+        {
+          path: '/blog',
+          element: <Blog></Blog>
+        },
+        {
+          path: '/contact',
+          element: <Contact></Contact>
         }
     ]
   },

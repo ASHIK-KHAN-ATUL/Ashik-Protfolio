@@ -28,23 +28,22 @@ const Project = () => {
     ];
 
     return (
-<div className="px-4 md:px-16 lg:px-24 py-10">
+<div className="px-4 md:px-16 lg:px-24 pb-10">
 
             {
                 location.pathname === '/project' ? 
-                <Title Subtitle='Showcasing some of my best work' title='About Me'></Title> :
-                ''
+                <Title Subtitle='Showcasing some of my best work' title='About Me'></Title> : '' 
             }
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
                 {projects.map((project, index) => (
-                    <div key={index} className="shadow-lg rounded-lg overflow-hidden transition-transform duration-300 hover:translate-0.5 border-2 border-[#25a244]/50">
+                    <div key={index} className="shadow-lg rounded-lg overflow-hidden transition-transform duration-300 hover:translate-0.5 border-2 border-[#25a244]/50 flex flex-col justify-between ">
                         <img src={project.image} alt={project.name} className="w-full h-48 object-cover" />
-                        <div className="p-5">
+                        <div className="p-5 flex flex-col ">
                             <h2 className="text-2xl font-semibold mb-2">{project.name}</h2>
                             <p className="text-gray-400 mb-4">{project.description}</p>
                             <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-[#25a244] font-medium hover:underline">
-                                        Visit Site →
+                                        Preview →
                             </a>
                         </div>
                     </div>

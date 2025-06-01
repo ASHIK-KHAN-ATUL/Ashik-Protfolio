@@ -4,7 +4,7 @@ import Navbar from '../Pages/Navbar/Navbar';
 
 const HomeLayouts = () => {
     return (
-        <div className='mx-auto min-h-screen bg-black'>
+        <div className='mx-auto min-h-screen bg-black text-white'>
             <Navbar></Navbar>
             <Outlet></Outlet>
         </div>
