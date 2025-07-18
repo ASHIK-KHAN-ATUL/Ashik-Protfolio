@@ -6,6 +6,7 @@ import AboutSection from '../Pages/Component/AboutSection/AboutSection';
 import Project from '../Pages/Component/Project/Project';
 import Blog from '../Pages/Component/Blog/Blog';
 import Contact from '../Pages/Component/Contact/Contact';
+import LoginWithGoogle from '../Pages/LoginWithGoogle/LoginWithGoogle';
 
 export const Router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ export const Router = createBrowserRouter([
         {
           path: '/contact',
           element: <Contact></Contact>
+        },
+        {
+          path: '/login-register',
+          element: <LoginWithGoogle></LoginWithGoogle>
         }
     ]
   },
