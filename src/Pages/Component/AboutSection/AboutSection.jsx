@@ -35,7 +35,7 @@ const AboutSection = () => {
                 {/* text */}
                 <div className='p-5 flex flex-col justify-center '>
 
-                    <p className='text-[#25a244] text-lg font-medium mb-5 lg:hidden'>Who am i ?</p>
+                    <p className='text-[#0EA5E9] text-lg font-medium mb-5 lg:hidden'>Who am i ?</p>
 
                     <h1 className='text-3xl font-bold mb-6'>I'm Ashik Khan, Junior MERN Stack Developer</h1>
 
@@ -56,7 +56,7 @@ const AboutSection = () => {
 
                         <div className=' md:w-full'>
                             <span>Email : </span>
-                            <span className='text-[#25a244] text-start'>ashikkhan693693@gamil.com</span>
+                            <span className='text-[#0EA5E9] text-start'>ashikkhan693693@gamil.com</span>
                         </div>
 
                         <div className=' md:w-full'>
@@ -88,8 +88,8 @@ const AboutSection = () => {
                             className={`border-2 h-12 w-12 flex justify-center items-center rounded-full 
                             ${
                                 hoveredIndex === i
-                                ? 'border-transparent bg-[#25a244] text-black duration-500 ease-in-out'
-                                : 'text-[#25a244] border-[#25a244]'
+                                ? 'border-transparent bg-[#0EA5E9] text-black duration-500 ease-in-out'
+                                : 'text-[#0EA5E9] border-[#0EA5E9]'
                             }
                             transition
                             `}

@@ -13,7 +13,7 @@ const HeroSection = () => {
                         <p className='text-5xl font-bold'>ASHIK KHAN <span>ATUL</span></p>
                         <h1 className="text-xl  font-semibold scale-95">
                             I AM A{' '}
-                            <span className="text-[#25a244]">
+                            <span className="text-[#0EA5E9]">
                             <Typewriter
                                 words={['JUNIOR MERN STACK DEVELOPER']}
                                 loop={true}

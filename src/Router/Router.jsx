@@ -7,6 +7,12 @@ import Project from '../Pages/Component/Project/Project';
 import Blog from '../Pages/Component/Blog/Blog';
 import Contact from '../Pages/Component/Contact/Contact';
 import LoginWithGoogle from '../Pages/LoginWithGoogle/LoginWithGoogle';
+import DashBoardLayout from '../Dash/DashBoardLayout/DashBoardLayout';
+import AdminRoute from './AdminRoute';
+import AddProject from '../Dash/DashComponent/AddProject';
+import AddBlog from '../Dash/DashComponent/AddBlog';
+import MessageSee from '../Dash/DashComponent/MessageSee';
+
 
 export const Router = createBrowserRouter([
   {
@@ -39,6 +45,24 @@ export const Router = createBrowserRouter([
         }
     ]
   },
+  {
+    path: 'dashboard',
+    element: <AdminRoute><DashBoardLayout></DashBoardLayout></AdminRoute>,
+    children: [
+      {
+        path: 'add-project',
+        element: <AddProject></AddProject>
+      },
+      {
+        path: 'add-blog',
+        element: <AddBlog></AddBlog>
+      },
+      {
+        path: 'messages',
+        element: <MessageSee></MessageSee>
+      }
+    ]
+  }
 ]);
 
 export default Router;

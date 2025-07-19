@@ -6,9 +6,9 @@ const Title = ({ title = "", Subtitle = ""  }) => {
     <section className=" flex justify-center my-12 ">
       <div className="text-center ">
         <h1 className="text-5xl font-bold  mb-3">{title}</h1>
-        <h1 className="text-xl text-[#25a244]">{Subtitle}</h1>
+        <h1 className="text-xl text-[#0EA5E9]">{Subtitle}</h1>
         <div className="flex justify-center mt-5">
-            <BarLoader color="#2dc653" width={250} />
+            <BarLoader color="#0EA5E9" width={250} />
         </div>
       </div>
     </section>

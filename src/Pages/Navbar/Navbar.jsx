@@ -5,12 +5,15 @@ import { RxCross2 } from 'react-icons/rx';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css'
 import { AuthContext } from '../../Providers/AuthProvider';
+import useAdmin from '../../Hooks/useAdmin';
 
 const Navbar = () => {
 
     const [isClick, setIsClick] = useState(false);
     // console.log(isClick);
     const {user, logout} = useContext(AuthContext);
+
+    const [isAdmin] = useAdmin();
 
     const handleLogout = () => {
         logout()
@@ -32,6 +35,9 @@ const Navbar = () => {
                         <NavLink to={'/project'} className={'nav-link'}><li>Project</li></NavLink>
                         <NavLink to={'/blog'} className={'nav-link'}><li>Blog</li></NavLink>
                         <NavLink to={'/contact'} className={'nav-link'}><li>Contact</li></NavLink>
+                        {
+                            isAdmin && <NavLink to={'/dashboard/add-project'} className={'nav-link'}><li>DashBoard</li></NavLink>
+                        }
                     </ul>
                 </div>
 
@@ -61,6 +67,10 @@ const Navbar = () => {
                                     <NavLink to={'/contact'}><li className={'hover:bg-gradient-to-br from-sky-400/20 via-indigo-500/30 to-purple-600/20 duration-500 p-2 rounded-sm w-auto'}>Contact</li></NavLink>
 
                                     {
+                                        isAdmin && <NavLink to={'dashboard/add-project'}><li className={'hover:bg-gradient-to-br from-sky-400/20 via-indigo-500/30 to-purple-600/20 duration-500 p-2 rounded-sm w-auto'}>DashBoard</li></NavLink>
+                                    }
+
+                                    {
                                     user?.email ? (
                                         <li>
                                         <button  onClick={handleLogout}  className="font-bold cursor-pointer p-2 hover:bg-gradient-to-br from-sky-400/20 via-indigo-500/30 to-purple-600/20 rounded-sm w-auto text-red-500" >  Logout
@@ -71,6 +81,7 @@ const Navbar = () => {
                                         </NavLink>
                                     )
                                     }
+                                    
                                 </ul>
                             </div>
                     </span>
