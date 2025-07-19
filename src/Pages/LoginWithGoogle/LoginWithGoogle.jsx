@@ -3,7 +3,7 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import { SiGoogle } from 'react-icons/si';
 import { IoArrowBack } from 'react-icons/io5';
-import useAxiosPublic from '../../Hooks/axiosPublic';
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
 import { toast } from 'react-toastify';
 
 const LoginWithGoogle = () => {
