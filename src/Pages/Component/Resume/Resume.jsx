@@ -12,7 +12,7 @@ const Resume = () => {
       {/* PDF embed */}
       <div className="border rounded-lg overflow-hidden shadow-lg">
         <iframe
-          src="/public/Ashik-Khan-Mern.pdf" // public folder e PDF thakbe
+          src="/Ashik-Khan-Mern.pdf" // public folder e PDF thakbe
           width="100%"
           height="800px"
           title="Resume PDF"
