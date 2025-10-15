@@ -17,11 +17,11 @@
 }
 
 .animate-marquee {
-  display: inline-flex;
+  display: flex;
   animation: marquee 20s linear infinite;
 }
 
 .animate-marquee-reverse {
-  display: inline-flex;
-  animation: marquee-reverse 25s linear infinite;
+  display: flex;
+  animation: marquee-reverse 30s linear infinite;
 }

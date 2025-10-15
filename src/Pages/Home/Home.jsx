@@ -15,7 +15,9 @@ const Home = () => {
     <div className="flex flex-col gap-20">
       <HeroSection></HeroSection>
       <AboutSection></AboutSection>
-      <SkillsCircle></SkillsCircle>
+      <div className="w-[99.9%] mx-auto">
+        <SkillsCircle></SkillsCircle>
+      </div>
       <Project></Project>
       <Contact></Contact>
       <Blog></Blog>

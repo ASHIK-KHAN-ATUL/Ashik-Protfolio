@@ -6,7 +6,7 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
-const AddProject = () => {
+const ProjectAdd = () => {
   const { register, handleSubmit, reset } = useForm();
   const axiosSecure = useAxiosSecure();
 
@@ -106,6 +106,7 @@ const AddProject = () => {
     "Vercel",
     "Netlify",
   ];
+
   return (
     <div className="py-10">
       <div className="max-w-3xl mx-auto bg-gradient-to-bl from-purple-600/20 via-indigo-500/30 to-sky-500/20 border border-y-purple-500/50 border-x-sky-500/50 text-white p-6 rounded shadow">
@@ -234,4 +235,4 @@ const AddProject = () => {
   );
 };
 
-export default AddProject;
+export default ProjectAdd;

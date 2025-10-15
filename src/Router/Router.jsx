@@ -13,6 +13,8 @@ import AddProject from "../Dash/DashComponent/AddProject";
 import AddBlog from "../Dash/DashComponent/AddBlog";
 import MessageSee from "../Dash/DashComponent/MessageSee";
 import Resume from "../Pages/Component/Resume/Resume";
+import ProjectAdd from "../Dash/DashComponent/ProjectAdd";
+import ProjectDetails from "../Pages/Component/ProjectDetails/ProjectDetails";
 
 export const Router = createBrowserRouter([
   {
@@ -30,6 +32,10 @@ export const Router = createBrowserRouter([
       {
         path: "/project",
         element: <Project></Project>,
+      },
+      {
+        path: "project/details/:id",
+        element: <ProjectDetails></ProjectDetails>,
       },
       {
         path: "/blog",

@@ -1,8 +1,9 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import Title from "../../Shared/Title";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import { FiExternalLink, FiInfo } from "react-icons/fi";
 
 const Project = () => {
   const location = useLocation();
@@ -16,63 +17,77 @@ const Project = () => {
     },
   });
 
-  console.log(projects);
-
   return (
-    <div className="px-4 md:px-16 lg:px-24 pb-10">
-      {location.pathname === "/project" ? (
-        <Title
-          Subtitle="Showcasing some of my best work"
-          title="Projects"
-        ></Title>
-      ) : (
-        ""
+    <div className="px-4 md:px-10 lg:px-20 pb-10">
+      {location.pathname === "/project" && (
+        <Title Subtitle="Showcasing some of my best work" title="Projects" />
       )}
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-        {projects.map((project, index) => (
+      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5 mt-12">
+        {projects.map((project) => (
           <div
-            key={index}
-            className="shadow-lg rounded-lg overflow-hidden transition-transform duration-300  border-2 flex flex-col justify-between bg-gradient-to-bl from-purple-600/20 via-indigo-500/10 to-sky-500/20   border-y-purple-500/70 border-x-sky-500/70 "
+            key={project._id}
+            className="group shadow-xl rounded-xl overflow-hidden bg-gradient-to-bl from-purple-600/20 via-indigo-500/10 to-sky-500/20 border border-y-purple-500/70 border-x-sky-500/70 transition-all duration-300 flex flex-col"
           >
-            <img
-              src={project.image}
-              alt={project.name}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-5 flex flex-col ">
-              <h2 className="text-2xl font-bold text-sky-500 hover:text-white duration-500 transition ">
+            {/* Image with zoom on hover */}
+            <div className="overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.name}
+                className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+
+            <div className="p-5 flex flex-col flex-1">
+              <h2 className="text-xl font-bold text-sky-500 group-hover:text-white transition duration-500">
                 {project.name}
               </h2>
 
-              <p
-                title={project.description}
-                className="text-gray-400 mb-4 line-clamp-4"
-              >
-                {project.description}
+              <p className="text-gray-400 text-sm my-2 line-clamp-3 whitespace-pre-line group-hover:text-white transition-colors">
+                {project.shortDescription}
               </p>
 
-              {/* 🏷️ Tags */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags?.map((tag, i) => (
+              {/* Tech Stack */}
+              <div className="flex flex-wrap gap-2 my-2">
+                {project.techStack?.map((tech, i) => (
                   <span
                     key={i}
-                    className="px-2 py-1 bg-sky-600/20 text-sky-400 text-xs rounded border border-purple-500/50 hover:bg-purple-400/20 hover:border-sky-500/70 cursor-pointer"
+                    className="px-2 py-1 bg-sky-600/20 text-sky-400 text-[10px] rounded border border-purple-500/50 hover:bg-sky-500 hover:text-white transition-colors cursor-pointer"
                   >
-                    {" "}
-                    {tag}
+                    {tech}
                   </span>
                 ))}
               </div>
 
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sky-500 font-medium hover:underline"
-              >
-                Preview →
-              </a>
+              {/* Tools Used */}
+              <div className="flex flex-wrap gap-2 my-2">
+                {project.toolsUsed?.map((tool, i) => (
+                  <span
+                    key={i}
+                    className="px-2 py-1 bg-purple-600/20 text-purple-400 text-[10px] rounded border border-sky-500/50 hover:bg-purple-500 hover:text-white transition-colors cursor-pointer"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+
+              {/* Buttons */}
+              <div className="mt-auto flex gap-3 pt-4">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 border border-sky-500 bg-transparent text-sky-500 text-sm rounded hover:bg-sky-500 hover:text-white transition-all duration-300"
+                >
+                  <FiExternalLink size={16} /> Preview
+                </a>
+                <Link
+                  to={`/project/details/${project._id}`}
+                  className="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 border border-purple-500 bg-transparent text-purple-500 text-sm rounded hover:bg-purple-500 hover:text-white transition-all duration-300"
+                >
+                  <FiInfo size={16} /> Details
+                </Link>
+              </div>
             </div>
           </div>
         ))}

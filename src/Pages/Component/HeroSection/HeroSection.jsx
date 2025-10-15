@@ -18,7 +18,7 @@ const HeroSection = () => {
         <p className="text-5xl font-bold">
           ASHIK KHAN <span>ATUL</span>
         </p>
-        <h1 className="text-xl  font-semibold scale-95">
+        <h1 className="text-lg sm:text-xl  font-semibold ">
           I AM A{" "}
           <span className="text-[#0EA5E9]">
             <Typewriter

@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://ashikkhanatul.surge.sh/sitemap.xml
+Sitemap: https://ashikkhanatul.netlify.app/sitemap.xml

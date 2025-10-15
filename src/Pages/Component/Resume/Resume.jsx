@@ -1,16 +1,16 @@
 import React from "react";
+import Title from "../../Shared/Title";
 
 const Resume = () => {
   return (
-    <div className="max-w-4xl mx-auto p-5">
-      <h2 className="text-3xl font-bold mb-6 text-center">My Resume</h2>
-
-      <p className="text-center mb-4 text-gray-600">
-        Scroll to view my resume below:
-      </p>
+    <div className=" px-4 md:px-20 py-10 ">
+      <Title
+        Subtitle="Scroll to view my resume below"
+        title="My Resume"
+      ></Title>
 
       {/* PDF embed */}
-      <div className="border rounded-lg overflow-hidden shadow-lg">
+      <div className="max-w-5xl mx-auto rounded-lg overflow-hidden shadow-lg">
         <iframe
           src="/Ashik-Khan-Mern.pdf" // public folder e PDF thakbe
           width="100%"

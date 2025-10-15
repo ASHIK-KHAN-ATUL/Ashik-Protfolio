@@ -27,9 +27,16 @@ const Navbar = () => {
   return (
     <div className="  p-2 px-10">
       <div className="flex justify-between items-center">
-        <span className="text-3xl font-bold">ASHIK</span>
+        <div>
+          <span className="text-3xl font-bold">
+            ASHIK
+            <span className="text-xs font-extralight text-gray-400/15 md:ml-2">
+              v3.0.1
+            </span>
+          </span>
+        </div>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <ul className="flex gap-5  font-semibold">
             <NavLink to={"/"} className={"nav-link"}>
               <li>Home</li>
@@ -59,13 +66,13 @@ const Navbar = () => {
 
         <div></div>
 
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <span
             onClick={() => setIsClick(!isClick)}
-            className=" text-2xl relative btn bg-transparent  z-10 "
+            className=" text-lg px-3 py-1 relative btn bg-transparent z-10 "
           >
             {isClick ? (
-              <span className="transition-all duration-300 ease-in-out transform rotate-180 scale-110 text-sky-400 bg-tra">
+              <span className="transition-all duration-300 ease-in-out transform rotate-180 scale-110 text-sky-400 bg-transparent">
                 <RxCross2 />
               </span>
             ) : (
@@ -76,7 +83,7 @@ const Navbar = () => {
             <div
               className={` ${
                 isClick ? "block" : "hidden"
-              } absolute top-12 -right-0 w-60 bg-gradient-to-bl from-sky-400/20 via-indigo-500/30 to-purple-600/40 text-sky-400 border border-sky-400 text-base p-5 rounded-lg overflow-hidden `}
+              } absolute top-12 -right-0 w-60 backdrop-blur-sm bg-gradient-to-bl from-sky-400/20 via-indigo-500/30 to-purple-600/40 text-sky-400 border border-sky-400 text-base p-5 rounded-lg overflow-hidden `}
             >
               <ul className=" flex flex-col  w-[60vh] text-start ">
                 <NavLink

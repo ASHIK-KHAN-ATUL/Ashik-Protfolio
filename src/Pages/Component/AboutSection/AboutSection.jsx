@@ -5,7 +5,6 @@ import { FaFacebookF, FaGithub } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
 import { FaXTwitter } from "react-icons/fa6";
 import { useLocation } from "react-router-dom";
-import SkillsCircle from "../SkillsCircle/SkillsCircle";
 
 const AboutSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -30,22 +29,18 @@ const AboutSection = () => {
         <Title Subtitle="Get to know me" title="About Me" />
       )}
 
-      <div className="flex flex-col lg:flex-row justify-between">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10">
         {/* Image */}
-        <div className="h-96 lg:h-[60vh] lg:w-full mx-auto p-5">
+        <div className="h-80 md:h-96 lg:h-[75vh] w-full lg:w-1/2 flex justify-center items-center">
           <img
             src={image}
-            className="h-full w-full object-cover rounded-full"
+            className="h-full w-auto  object-cover "
             alt="Ashik Khan profile"
           />
         </div>
 
-        {/* Text */}
-        <div className="p-5 flex flex-col justify-center">
-          <p className="text-[#0EA5E9] text-lg font-medium mb-5 lg:hidden">
-            Who am I?
-          </p>
-
+        {/* Text Section */}
+        <div className="p-5 lg:w-1/2 flex flex-col justify-center">
           <h1 className="text-3xl font-bold mb-6">
             I'm Ashik Khan, Junior MERN Stack Developer
           </h1>
@@ -65,17 +60,10 @@ const AboutSection = () => {
               digital products. My focus is on writing clean code and crafting
               intuitive designs that deliver seamless user experiences.
             </p>
-
-            <p>
-              As I continue to learn and build real-world projects, I strive to
-              improve with every step. I’m detail-oriented, eager to take on
-              challenges, and committed to evolving as a developer who can
-              create impactful web solutions.
-            </p>
           </div>
 
           {/* Personal Info */}
-          <div className="border-t-2 border-gray-500 mt-10 pt-10 grid grid-cols-1 md:grid-cols-2 gap-5 font-medium">
+          <div className="border-t border-gray-500 mt-10 pt-6 grid grid-cols-1 md:grid-cols-2 gap-4 font-medium">
             <div>
               <span>Name: </span>
               <span>ASHIK KHAN ATUL</span>
@@ -93,36 +81,127 @@ const AboutSection = () => {
 
             <div>
               <span>Phone: </span>
-              <span>01841065033</span>
+              <span>01306068794</span>
             </div>
 
             <div>
               <span>From: </span>
               <span>Kushtia, Bangladesh</span>
             </div>
+
+            <div>
+              <span>Current Address: </span>
+              <span>Kakrail, Dhaka, Bangladesh</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="p-5">
+        {/* Education and achivement */}
+        <div className="flex flex-col md:flex-row gap-10">
+          {/* Education */}
+          <div className="border-t border-gray-500 mt-10 pt-6">
+            <h2 className="text-2xl font-semibold text-[#0EA5E9] mb-5">
+              Education 🎓
+            </h2>
+            <ul className="text-gray-400 space-y-3">
+              <li>
+                🎯{" "}
+                <span className="font-semibold text-white">
+                  Diploma in Computer Technology
+                </span>{" "}
+                — Kushtia Polytechnic Institute <br />
+                <span className="text-sm text-gray-500">
+                  Session: 2020–2021 | Passing Year: 2024 | CGPA: 3.48
+                </span>
+              </li>
+              <li>
+                🧠{" "}
+                <span className="font-semibold text-white">SSC in Science</span>{" "}
+                — Mohinimohon Biddapith, Kushtia <br />
+                <span className="text-sm text-gray-500">
+                  Passing Year: 2020 | GPA: 4.56 | Board: Jashore
+                </span>
+              </li>
+            </ul>
           </div>
 
-          {/* Social Links */}
-          <div className="py-10 font-medium flex gap-4 justify-center lg:justify-start">
-            {links.map((link, i) => (
-              <a
-                key={i}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                onMouseEnter={() => setHoveredIndex(i)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                className={`border-2 h-12 w-12 flex justify-center items-center rounded-full transition
+          {/* Achievements & Courses */}
+          <div className="border-t border-gray-500 mt-10 pt-6">
+            <h2 className="text-2xl font-semibold text-[#0EA5E9] mb-5">
+              Courses & Certificates 🏅
+            </h2>
+            <ul className="text-gray-400 space-y-4">
+              <li>
+                💻{" "}
+                <span className="font-semibold text-white">
+                  Complete Web Development Course Level-1
+                </span>{" "}
+                —{" "}
+                <a
+                  href="https://drive.google.com/file/d/13-TO6kXkya2WJvgPurHTwZlh9NcN0x36/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#0EA5E9] hover:underline"
+                >
+                  View Certificate
+                </a>
+              </li>
+              <li>
+                📝{" "}
+                <span className="font-semibold text-white">
+                  CV Writing and Interview
+                </span>{" "}
+                — 10 Minute School{" "}
+                <a
+                  href="https://drive.google.com/file/d/1QcOEtwM48raYKRf8WeOKFsOeq8nGolHb/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#0EA5E9] hover:underline"
+                >
+                  View Certificate
+                </a>
+              </li>
+              <li>
+                ✉️{" "}
+                <span className="font-semibold text-white">
+                  Email Writing Certificate
+                </span>{" "}
+                — 10 Minute School{" "}
+                <a
+                  href="https://drive.google.com/file/d/1Yfiu-BGH9fe6UFQxXUC5NrZRB9feuXC4/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#0EA5E9] hover:underline"
+                >
+                  View Certificate
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Social Links */}
+        <div className="py-5 mt-10 border-t border-gray-500 font-medium flex gap-4 justify-center ">
+          {links.map((link, i) => (
+            <a
+              key={i}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onMouseEnter={() => setHoveredIndex(i)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              className={`border-2 h-12 w-12 flex justify-center items-center rounded-full transition
                   ${
                     hoveredIndex === i
                       ? "border-transparent bg-[#0EA5E9] text-black duration-500 ease-in-out"
                       : "text-[#0EA5E9] border-[#0EA5E9]"
                   }`}
-              >
-                {link.icon}
-              </a>
-            ))}
-          </div>
+            >
+              {link.icon}
+            </a>
+          ))}
         </div>
       </div>
     </div>
