@@ -8,6 +8,7 @@ import { useLocation } from "react-router-dom";
 
 const AboutSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  // console.log(hoveredIndex);
   const location = useLocation();
 
   const links = [
@@ -99,9 +100,9 @@ const AboutSection = () => {
 
       <div className="p-5">
         {/* Education and achivement */}
-        <div className="flex flex-col md:flex-row gap-10">
+        <div className="flex flex-col md:flex-row gap-10 justify-center">
           {/* Education */}
-          <div className="border-t border-gray-500 mt-10 pt-6">
+          <div className="border-t border-gray-500 mt-10 pt-6 w-full">
             <h2 className="text-2xl font-semibold text-[#0EA5E9] mb-5">
               Education 🎓
             </h2>
@@ -128,7 +129,7 @@ const AboutSection = () => {
           </div>
 
           {/* Achievements & Courses */}
-          <div className="border-t border-gray-500 mt-10 pt-6">
+          <div className="border-t border-gray-500 mt-10 pt-6 w-full">
             <h2 className="text-2xl font-semibold text-[#0EA5E9] mb-5">
               Courses & Certificates 🏅
             </h2>
@@ -183,7 +184,7 @@ const AboutSection = () => {
         </div>
 
         {/* Social Links */}
-        <div className="py-5 mt-10 border-t border-gray-500 font-medium flex gap-4 justify-center ">
+        <div className="py-5 mt-10 border-t border-gray-500 font-medium flex gap-6 md:gap-20 duration-1000 justify-center">
           {links.map((link, i) => (
             <a
               key={i}
@@ -192,14 +193,19 @@ const AboutSection = () => {
               rel="noopener noreferrer"
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`border-2 h-12 w-12 flex justify-center items-center rounded-full transition
-                  ${
-                    hoveredIndex === i
-                      ? "border-transparent bg-[#0EA5E9] text-black duration-500 ease-in-out"
-                      : "text-[#0EA5E9] border-[#0EA5E9]"
-                  }`}
+              className={` flex justify-center items-center rounded-full border-2  h-14 w-14 md:h-16 md:w-16 transition-all duration-500  ${
+                hoveredIndex === i
+                  ? "border-transparent scale-125 bg-gradient-to-br from-[#0EA5E9] to-[#38BDF8] text-black"
+                  : "border-[#0EA5E9] text-[#0EA5E9] hover:scale-110"
+              }  `}
             >
-              {link.icon}
+              <span
+                className={` transition-all duration-700  ${
+                  hoveredIndex === i ? "scale-150 rotate-[-6deg]" : ""
+                } `}
+              >
+                {link.icon}
+              </span>
             </a>
           ))}
         </div>

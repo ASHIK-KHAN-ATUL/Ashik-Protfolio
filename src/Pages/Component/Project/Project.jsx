@@ -17,6 +17,36 @@ const Project = () => {
     },
   });
 
+  // Skeleton loader while fetching
+  if (!projects.length) {
+    return (
+      <div className="px-4 md:px-10 lg:px-20 pb-10">
+        {location.pathname === "/project" && (
+          <Title Subtitle="Showcasing some of my best work" title="Projects" />
+        )}
+
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5 mt-12">
+          {[1, 2, 3, 4, 5, 6].map((i) => (
+            <div
+              key={i}
+              className="group shadow-xl rounded-xl overflow-hidden bg-gray-700/20 animate-pulse border border-gray-600 flex flex-col h-[320px]"
+            >
+              <div className="w-full h-52 bg-gray-600/30"></div>
+              <div className="p-5 flex flex-col flex-1">
+                <div className="h-6 w-3/4 bg-gray-500/30 rounded mb-2"></div>
+                <div className="h-4 w-full bg-gray-500/20 rounded mb-2"></div>
+                <div className="flex gap-2 mt-auto">
+                  <div className="h-8 flex-1 bg-gray-500/20 rounded"></div>
+                  <div className="h-8 flex-1 bg-gray-500/20 rounded"></div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="px-4 md:px-10 lg:px-20 pb-10">
       {location.pathname === "/project" && (
@@ -29,7 +59,7 @@ const Project = () => {
             key={project._id}
             className="group shadow-xl rounded-xl overflow-hidden bg-gradient-to-bl from-purple-600/20 via-indigo-500/10 to-sky-500/20 border border-y-purple-500/70 border-x-sky-500/70 transition-all duration-300 flex flex-col"
           >
-            {/* Image with zoom on hover */}
+            {/* Image */}
             <div className="overflow-hidden">
               <img
                 src={project.image}

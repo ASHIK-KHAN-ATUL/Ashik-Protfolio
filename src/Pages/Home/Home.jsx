@@ -9,6 +9,7 @@ import Blog from "../Component/Blog/Blog";
 import Contact from "../Component/Contact/Contact";
 import Footer from "../Footer/Footer";
 import SkillsCircle from "../Component/SkillsCircle/SkillsCircle";
+import HomeProjectsCarousel from "../Component/HomeProjectsCarousel/HomeProjectsCarousel";
 
 const Home = () => {
   return (
@@ -18,7 +19,8 @@ const Home = () => {
       <div className="w-[99.9%] mx-auto">
         <SkillsCircle></SkillsCircle>
       </div>
-      <Project></Project>
+      <HomeProjectsCarousel></HomeProjectsCarousel>
+      {/* <Project></Project> */}
       <Contact></Contact>
       <Blog></Blog>
       <Footer></Footer>

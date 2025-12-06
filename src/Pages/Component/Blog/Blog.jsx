@@ -19,29 +19,59 @@ const Blog = () => {
     },
   });
 
+  // Skeleton Loader
+  if (!blogPosts.length) {
+    return (
+      <div className="px-4 md:px-16 lg:px-24 pb-10">
+        {location.pathname === "/blog" && (
+          <Title Subtitle="My Insights" title="Blog & Articles" />
+        )}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          {[1, 2, 3, 4, 5, 6].map((i) => (
+            <div
+              key={i}
+              className="rounded-xl overflow-hidden bg-gray-700/20 animate-pulse border border-gray-600 flex flex-col h-[400px]"
+            >
+              <div className="w-full h-48 bg-gray-600/30"></div>
+              <div className="p-5 flex flex-col flex-1 gap-3">
+                <div className="h-4 w-1/4 bg-gray-500/30 rounded"></div>
+                <div className="h-6 w-full bg-gray-500/20 rounded"></div>
+                <div className="h-4 w-full bg-gray-500/20 rounded"></div>
+                <div className="flex gap-2 mt-auto">
+                  <div className="h-8 flex-1 bg-gray-500/20 rounded"></div>
+                  <div className="h-8 flex-1 bg-gray-500/20 rounded"></div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="px-4 md:px-16 lg:px-24 pb-10">
+    <div className="px-4 md:px-10 lg:px-24 pb-10">
       {location.pathname === "/blog" && (
         <Title Subtitle="My Insights" title="Blog & Articles" />
       )}
 
       {/* Blog Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 mt-12">
         {blogPosts.map((post) => (
           <motion.div
             key={post._id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="rounded-xl overflow-hidden border border-sky-600/60 hover:shadow-lg hover:shadow-sky-800/30 transition duration-300 bg-gradient-to-br from-slate-900 via-indigo-900/20 to-sky-900/10"
+            className="rounded-xl overflow-hidden border border-sky-600/60 hover:shadow-lg hover:shadow-sky-800/30 transition duration-300 bg-gradient-to-br from-slate-900 via-indigo-900/20 to-sky-900/10 flex flex-col "
           >
             <img
               src={post.image}
               alt={post.title}
               className="w-full h-48 object-cover"
             />
-            <div className="p-5 flex flex-col gap-3">
-              <p className="flex items-center gap-2 text-sm text-gray-400">
+            <div className="p-5 flex flex-col flex-1 ">
+              <p className="flex items-center gap-5 text-sm text-gray-400">
                 <FiCalendar />{" "}
                 {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
@@ -49,13 +79,15 @@ const Blog = () => {
                   day: "numeric",
                 })}
               </p>
-              <h2 className="text-xl font-semibold text-sky-400 hover:text-white transition">
+              <h2 className="text-xl font-semibold text-sky-400 hover:text-white transition mt-2">
                 {post.title}
               </h2>
-              <p className="text-white/70">{post.summary}</p>
+              <p className="text-white/70 line-clamp-3 flex-1 overflow-hidden mt-3">
+                {post.summary}
+              </p>
               <button
                 onClick={() => setSelectedPost(post)}
-                className="mt-auto text-sky-400 font-semibold hover:underline"
+                className=" text-sky-400 font-semibold hover:underline mt-3"
               >
                 Read More →
               </button>
@@ -80,27 +112,20 @@ const Blog = () => {
               transition={{ duration: 0.25 }}
               className="relative w-full max-w-3xl bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 border border-sky-500/40 rounded-xl p-6 shadow-2xl overflow-y-auto max-h-[90vh]"
             >
-              {/* Close button */}
               <button
                 onClick={() => setSelectedPost(null)}
                 className="absolute top-3 right-3 text-gray-300 text-2xl hover:text-sky-400 transition"
               >
                 <FiX />
               </button>
-
-              {/* Image */}
               <img
                 src={selectedPost.image}
                 alt={selectedPost.title}
                 className="w-full h-60 object-cover rounded-lg mb-5"
               />
-
-              {/* Title */}
               <h2 className="text-3xl font-bold text-sky-400 mb-2">
                 {selectedPost.title}
               </h2>
-
-              {/* Date */}
               <p className="text-sm text-gray-400 mb-4">
                 <FiCalendar className="inline mr-2" />
                 {new Date(selectedPost.date).toLocaleDateString("en-US", {
@@ -109,11 +134,8 @@ const Blog = () => {
                   day: "numeric",
                 })}
               </p>
-
-              {/* Content */}
               <p className="text-gray-300 leading-relaxed whitespace-pre-line">
-                {selectedPost.fullContent ||
-                  "In this article, we explore essential development techniques, structure optimization, and real-world strategies to improve your workflow as a developer. Full version coming soon!"}
+                {selectedPost.fullContent || "Full content coming soon!"}
               </p>
             </motion.div>
           </motion.div>

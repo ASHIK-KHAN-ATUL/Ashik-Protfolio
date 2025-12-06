@@ -30,8 +30,8 @@ const Navbar = () => {
         <div>
           <span className="text-3xl font-bold">
             ASHIK
-            <span className="text-xs font-extralight text-gray-400/15 md:ml-2">
-              v3.0.1
+            <span className="text-xs font-extralight text-gray-400/25 md:ml-2">
+              v3.2.3
             </span>
           </span>
         </div>
