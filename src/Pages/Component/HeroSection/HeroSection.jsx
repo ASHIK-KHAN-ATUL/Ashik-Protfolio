@@ -7,11 +7,11 @@ const HeroSection = () => {
   return (
     <div className="relative w-full min-h-screen bg-black">
       {/* Background Image */}
-      <div className="w-full h-full flex justify-end items-center overflow-hidden">
+      <div className="min-h-screen px-6 flex justify-center md:justify-end items-center ">
         <img
-          className="object-cover object-right grayscale max-h-[70vh] brightness-75 w-full md:w-auto md:max-h-[80vh] mask-b-from-20% mask-b-to-100%"
+          className="grayscale max-h-[80vh] brightness-80 mask-b-from-20% mask-b-to-100% "
           src={image1}
-          alt="Profile"
+          alt=""
         />
       </div>
 
