@@ -5,20 +5,28 @@ import { FaDownload } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
-    <div className="relative">
-      <div className="min-h-screen px-6 flex justify-end items-center ">
+    <div className="relative w-full min-h-screen bg-black">
+      {/* Background Image */}
+      <div className="w-full h-full flex justify-end items-center overflow-hidden">
         <img
-          className="grayscale  max-h-[70vh] brightness-80 mask-b-from-20% mask-b-to-100% "
+          className="object-cover object-right grayscale max-h-[70vh] brightness-75 w-full md:w-auto md:max-h-[80vh] mask-b-from-20% mask-b-to-100%"
           src={image1}
-          alt=""
+          alt="Profile"
         />
       </div>
 
-      <div className="absolute top-0 bottom-0 left-0 right-0 flex flex-col items-center justify-center md:pr-[20%]  ">
-        <p className="text-5xl font-bold">
-          ASHIK KHAN <span>ATUL</span>
+      {/* Text Overlay */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-6 md:items-start md:pl-16">
+        {/* Name */}
+        <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-center md:text-left mb-3">
+          ASHIK KHAN{" "}
+          <span className="bg-gradient-to-tl from-purple-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent">
+            ATUL
+          </span>
         </p>
-        <h1 className="text-lg sm:text-xl  font-semibold ">
+
+        {/* Typewriter */}
+        <h1 className="text-md sm:text-lg md:text-xl font-semibold text-center md:text-left mb-6">
           I AM A{" "}
           <span className="text-[#0EA5E9]">
             <Typewriter
@@ -26,12 +34,13 @@ const HeroSection = () => {
               loop={true}
               cursor
               cursorStyle="__"
-              typeSpeed={150}
-              deleteSpeed={70}
+              typeSpeed={100}
+              deleteSpeed={50}
               delaySpeed={1200}
             />
           </span>
         </h1>
+
         {/* Download Resume Button */}
         <a
           href="/Ashik-Khan-Mern.pdf" // PDF public folder e thakbe

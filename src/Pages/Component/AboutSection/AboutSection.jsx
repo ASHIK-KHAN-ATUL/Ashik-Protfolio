@@ -42,7 +42,7 @@ const AboutSection = () => {
 
         {/* Text Section */}
         <div className="p-5 lg:w-1/2 flex flex-col justify-center">
-          <h1 className="text-3xl font-bold mb-6">
+          <h1 className="text-3xl font-bold mb-6  bg-gradient-to-tl from-purple-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent">
             I'm Ashik Khan, Junior MERN Stack Developer
           </h1>
 

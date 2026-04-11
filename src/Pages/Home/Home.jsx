@@ -16,7 +16,7 @@ const Home = () => {
     <div className="flex flex-col gap-20">
       <HeroSection></HeroSection>
       <AboutSection></AboutSection>
-      <div className="w-[99.9%] mx-auto">
+      <div className="w-full overflow-x-hidden">
         <SkillsCircle></SkillsCircle>
       </div>
       <HomeProjectsCarousel></HomeProjectsCarousel>

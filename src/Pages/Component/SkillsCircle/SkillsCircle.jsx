@@ -36,14 +36,17 @@ const SkillsCircle = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-6 ">
+    <div className="flex flex-col gap-6 overflow-x-hidden ">
       {/* Top marquee */}
-      <div className="overflow-hidden w-full py-4 rotate-1 bg-gradient-to-bl from-purple-600/20 via-indigo-500/30 to-sky-500/20 border-y-purple-500/70 border-x-sky-500/70 rounded px-4">
+      <div
+        className="overflow-hidden w-full py-4 md:rotate-1 rotate-0
+ bg-gradient-to-bl from-purple-600/20 via-indigo-500/30 to-sky-500/20 border-y-purple-500/70 border-x-sky-500/70 rounded px-4"
+      >
         <Marquee gradient={false} speed={50} pauseOnHover={true}>
           {skills.map((skill, i) => (
             <div
               key={i}
-              className="text-4xl px-6 flex-shrink-0"
+              className="text-3xl sm:text-4xl px-4 sm:px-6 flex-shrink-0"
               style={{ color: skill.color }}
             >
               {skill.icon}
@@ -53,7 +56,7 @@ const SkillsCircle = () => {
       </div>
 
       {/* Bottom reverse marquee */}
-      <div className="overflow-hidden w-full py-4 -rotate-1 bg-gradient-to-bl from-purple-600/40 via-indigo-500/30 to-sky-500/20 border-y-purple-500/70 border-x-sky-500/70 rounded px-4">
+      <div className="overflow-hidden w-full py-4 md:-rotate-1 rotate-0 bg-gradient-to-bl from-purple-600/40 via-indigo-500/30 to-sky-500/20 border-y-purple-500/70 border-x-sky-500/70 rounded px-4">
         <Marquee
           gradient={false}
           speed={30}
@@ -63,7 +66,7 @@ const SkillsCircle = () => {
           {skills.map((skill, i) => (
             <div
               key={i}
-              className="text-4xl px-6 flex-shrink-0"
+              className="text-3xl sm:text-4xl px-4 sm:px-6 flex-shrink-0"
               style={{ color: skill.color }}
             >
               {skill.icon}
